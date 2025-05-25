@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse event</title>
+</head>
+<body style="height: 100vh; display: grid; place-content: center;">
+    <div id="over" style="width: 100px; height: 100px; background-color: black;" onmouseover="color()" onmouseout="color()">
+    </div>
+    <script>
+        function color() {
+            r = parseInt(Math.random() * 200)
+            g = parseInt(Math.random() * 200)
+            b = parseInt(Math.random() * 200)
+
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+            document.getElementById('over').style.background = 'rgb(' + b + ',' + r + ',' + g + ')';
+        }
+    </script>
+</body>
+</html>

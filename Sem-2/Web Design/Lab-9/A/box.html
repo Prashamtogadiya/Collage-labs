@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Box Openeing Animation</title>
+    </head>
+    <style>
+        body{
+            background-color: #003c34;
+        }
+        .box{
+            margin-top: 13%;
+            margin-left: 35%;
+        }
+        .text{
+            color: #d4dddc;
+            font-size: 36px;
+            margin-left: 174px;
+        }
+        .upper, .lower{
+            display: flex;
+        }
+        .lower{
+            margin-top: -47px;
+        }
+        #b1, #b2, #b3, #b4{
+            height: 20vh;
+            width: 20vh;
+            border: 5px solid #7b710a;
+            border-radius: 1px;
+            background-color: yellow;
+        }
+        #b1{
+            animation: b1 3s forwards;
+        }
+        #b2{
+            animation: b2 3s forwards;
+        }
+        #b3{
+            animation: b3 3s forwards;
+        }
+        #b4{
+            animation: b4 3s forwards;
+        }
+        @keyframes b1 {
+            100%{
+                margin-right: 90px;
+                transform: rotate(-90deg);
+            }
+        }
+        @keyframes b2 {
+            100%{
+                margin-left: 90px;
+                transform: rotate(90deg);
+            }
+        }
+        @keyframes b3 {
+            100%{
+                margin-right: 90px;
+                transform: rotate(90deg);
+            }
+        }
+        @keyframes b4 {
+            100%{
+                margin-left: 90px;
+                transform: rotate(-90deg);
+            }
+        }
+    </style>
+    <body>
+            <div class="box">
+                <div class="upper">
+                    <div id="b1"></div>
+                    <div id="b2"></div>
+                </div>
+                <div class="text">Animation</div>
+                <div class="lower">
+                    <div id="b3"></div>
+                    <div id="b4"></div>
+                </div>
+            </div>
+    </body>
+</html>

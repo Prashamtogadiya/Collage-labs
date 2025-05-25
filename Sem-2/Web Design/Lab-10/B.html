@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Page</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+        }
+        .header{
+            width: 100%;
+            height: 6vh;
+        }
+        .img {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(221, 201, 20);
+            float: left;
+        }
+        .menu {
+            float: right;
+            padding: 5px;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        .sidebar{
+            background-color: red;
+            width: 130px;
+            height: auto;
+            float: left;
+        }
+        .sidebarContent{
+            border: 1px solid yellow;
+            margin: 5px 0px 5px 0px ;
+            text-align: center;
+            padding: 10px;
+        }
+        .mainContent{
+            float: left;
+            padding: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            margin: 5px;
+        }
+        .content{
+            height: 248px;
+            border: 1px dashed black;
+        }
+        .contentImg{
+            width: 70px;
+            height: 70px;
+            background-color: rgb(221, 201, 20);
+            float: left;
+            margin: 10px;
+        }
+        .lower{
+            clear: left;
+        }
+        .footer{
+            background-color: rgb(16, 16, 253);
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            height: 6vh;
+        }
+        @media screen and (max-width: 520px) {
+            .sidebar{
+                width: 100%;
+            }
+            .content{
+                height: 750px;
+            }
+            .sidebarContent{
+                text-align: left;
+                width: 100%;
+            }
+            .mainContent{
+                float: none;
+                width: 100%;
+            }
+            .contentImg{
+                float: none;
+                width: 100%;
+                margin: 10px 0px 0px 0px;
+            }
+            .lower{
+                clear: none;
+            }
+            .footer{
+                text-align: center;
+            }
+            .mainContent{
+                margin-top: 33vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="img"></div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Login</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="sidebar">
+            <div style="text-align: center;"><a href="#">Sidebar</a></div>
+            <div class="sidebarContent"><a href="#">Home</a></div>
+            <div class="sidebarContent"><a href="#">Placement</a></div>
+            <div class="sidebarContent"><a href="#">Recruitment</a></div>
+            <div class="sidebarContent"><a href="#">Faculty</a></div>
+            <div class="sidebarContent"><a href="#">News</a></div>
+        </div>
+        <div class="mainContent">
+            <div class="upper">
+                <div class="contentImg"></div>
+                <div class="contentImg"></div>
+            </div>
+            <div class="lower">
+                <div class="contentImg"></div>
+                <div class="contentImg"></div>
+                <div class="contentImg"></div>
+                <div class="contentImg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Darshan University-Rajkot
+    </div>
+</body>
+
+</html>

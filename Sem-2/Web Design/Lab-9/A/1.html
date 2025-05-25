@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Animation</title>
+        <style>
+            body{
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .div{
+                height: 50vh;
+                width: 50vh;
+                font-size: 50px;
+                border-radius: 500px;
+                color: whitesmoke;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation-name: color;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes color{
+                0%{
+                    background-color: aliceblue;
+                }
+                25%{
+                    background-color: rgb(151, 230, 83);
+                }
+                50%{
+                    background-color: rgb(217, 217, 0);
+                }
+                75%{
+                    background-color: violet;
+                }
+                100%{
+                    background-color: cadetblue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            Animation
+        </div>
+    </body>
+</html>

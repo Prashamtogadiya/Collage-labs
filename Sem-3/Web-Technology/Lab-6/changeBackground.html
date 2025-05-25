@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background when click</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        button {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            border: none;
+            size: 50px;
+            padding: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+        <button id="button" onclick="changeColor()">Click me</button>
+    <script>
+        function changeColor() {
+            r = parseInt(Math.random() * 200)
+            g = parseInt(Math.random() * 200)
+            b = parseInt(Math.random() * 200)
+
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+            document.getElementById('button').style.background = 'rgb(' + b + ',' + r + ',' + g + ')';
+
+            document.getElementById('button').style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard event</title>
+    <style>
+        div {
+            font-size: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div" onkeyup="">Hello</div>
+    <script>
+        topValue = 0
+        leftValue = 0
+        sizeValue = 50
+        document.addEventListener('keyup', (e) => {
+            console.log("Top : "+topValue)
+            console.log("Left : "+leftValue)
+            if (e.key == 'ArrowUp') {
+                if (topValue>10) {
+                    topValue-=10
+                    document.getElementById('div').style.top = topValue+"px";
+                }
+                document.getElementById('div').style.top = topValue+"px";
+            }
+            else if (e.key == 'ArrowDown') {
+                if (topValue<window.innerHeight-10) {
+                    topValue+=10
+                    document.getElementById('div').style.top = topValue+"px";
+                }
+            }
+            else if (e.key == 'ArrowLeft') {
+                if (leftValue>10) {
+                    leftValue-=10
+                    document.getElementById('div').style.left = leftValue+"px";
+                }
+            }
+            else if (e.key == 'ArrowRight') {
+                if (leftValue<window.innerWidth-10) {
+                    leftValue+=10
+                    document.getElementById('div').style.left = leftValue+"px";
+                }
+            }
+            else if (e.key == '+') {
+                sizeValue+=10
+                document.getElementById('div').style.fontSize = sizeValue+"px"
+            }
+            else if (e.key == '-') {
+                sizeValue-=10
+                    document.getElementById('div').style.fontSize = sizeValue+"px";
+            }
+        })
+    </script>
+</body>
+
+</html>

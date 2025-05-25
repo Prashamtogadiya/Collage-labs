@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #1b2630; color: white;">
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1 class="display-5 mb-5"><b>CRUD APPLICATION</b></h1>
+        </div>
+        <div class="main row justify-content-center">
+            <form class="row justify-content-center mb-5" onsubmit="return add()">
+                <div class="col-12 col-lg-10 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
+                </div>
+                <div class="col-12 col-lg-10 mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+                </div>
+                <div class="col-12 col-lg-10 mb-3">
+                    <label class="form-label">Semester</label>
+                    <input type="text" class="form-control" id="sem" placeholder="Enter Semester" required>
+                </div>
+                <div class="col-12 col-lg-10 mb-3">
+                    <label class="form-label" id="firstName">Roll No</label>
+                    <input type="text" class="form-control" id="rollno" placeholder="Enter Roll No" required>
+                </div>
+                <div class="col-10">
+                    <input type="submit" class="btn btn-success" id="submit" value="Submit">
+                </div>
+            </form>
+            <div class="col-12 col-lg-10 mt-5" id="form">
+                <!-- Display table -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let editId = -1;
+        let data = [];
+
+        function add() {
+            tempObj = {
+                fname: document.getElementById('firstName').value,
+                lname: document.getElementById('lastName').value,
+                sem: document.getElementById('sem').value,
+                rno: document.getElementById('rollno').value
+            };
+            if (editId >= 0) {
+                data[editId] = tempObj;
+                editId = -1;
+                document.getElementById('submit').value = "Submit";
+            } else {
+                data.push(tempObj);
+            }
+
+            display();
+            document.querySelector("form").reset();
+            return false;
+        }
+
+        function display() {
+            const temp = document.getElementById("form");
+            let tempString = "";
+            if (data.length!=0) {
+                tempString = '<table class="table table-dark table-striped"><thead><tr><th scope="col">First Name</th><th scope="col">Last Name</th><th scope="col">Semester</th><th scope="col">Roll No</th><th scope="col">Action</th></tr></thead><tbody>';
+                for (let i = 0; i < data.length; i++) {
+                    tempString += "<tr>";
+                    tempString += "<td>" + data[i].fname + "</td>";
+                    tempString += "<td>" + data[i].lname + "</td>";
+                    tempString += "<td>" + data[i].sem + "</td>";
+                    tempString += "<td>" + data[i].rno + "</td>";
+                    tempString += '<td><button class="btn btn-sm btn-warning" onclick="edit(' + i + ')">Edit</button> ';
+                    tempString += '<button class="btn btn-sm btn-danger" onclick="deleteData(' + i + ')">Delete</button></td>';
+                    tempString += "</tr>";
+                }
+                tempString += "</tbody></table>";
+            }
+            temp.innerHTML = tempString;
+        }
+
+        function edit(id) {
+            editId = id;
+            document.getElementById('firstName').value = data[editId].fname;
+            document.getElementById('lastName').value = data[editId].lname;
+            document.getElementById('sem').value = data[editId].sem;
+            document.getElementById('rollno').value = data[editId].rno;
+            document.getElementById('submit').value = "Edit";
+        }
+
+        function deleteData(id) {
+            data.splice(id, 1);
+            display();
+        }
+    </script>
+</body>
+
+</html>

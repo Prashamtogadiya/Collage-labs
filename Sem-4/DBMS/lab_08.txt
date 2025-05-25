@@ -1,0 +1,20 @@
+1.	use Darshan
+2.	use DIET
+3.	show dbs
+4.	db
+5.	db.dropDatabase()
+6.	db.createCollection('Student')
+7.	db.createCollection('Department')
+8.	show collections
+9.	db.Department.insertOne({DName: 'IT',HOD: 'Patel’})
+10.	db.Department.insertMany([{DName:'IT'}, {DName:'ICT'}])
+11.	db.Department.drop()
+12.	db.Student.insertOne({})
+13.	db.Student.insertMany([{},{}])
+14.	db.getCollectionNames().includes('Student')
+15.	db.
+16.	db.Student.drop()
+17.	db.createCollection('Deposit')
+18.	db.Deposit.insertMany([{},{}])
+19.	db.Deposit.find().forEach(printjson)
+20.	db.Deposit.drop()

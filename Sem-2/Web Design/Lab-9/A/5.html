@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Animation</title>
+        <style>
+            .div{
+                animation-name: displace;
+                position: absolute;
+                animation-name: displace;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(1, 1, 1, 1);
+            }
+            .circle{
+                height: 20vh;
+                width: 20vh;
+                font-size: 20px;
+                color: whitesmoke;
+                border-radius: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation-name: circle;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(1, 1, 1, 1);
+            }
+            @keyframes displace{
+                0%{
+                    top: 0%;
+                    left: 0%;
+                }
+                25%{
+                    top: 0%;
+                    left: calc(100% - 20vh);
+                }
+                50%{
+                    top: calc(100% - 20vh);
+                    left: calc(100% - 20vh);
+                }
+                75%{
+                    top: calc(100% - 20vh);
+                    left: 0%;
+                }
+                100%{
+                    top: 0%;
+                    left: 0%;
+                }
+            }
+            @keyframes circle{
+                0%{
+                    background-color: aliceblue;
+                    transform: rotate(360deg);
+                }
+                25%{
+                    background-color: rgb(151, 230, 83);
+                }
+                50%{
+                    background-color: rgb(217, 217, 0);
+                }
+                75%{
+                    background-color: violet;
+                }
+                100%{
+                    background-color: cadetblue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            <div class="circle">
+                Animation
+            </div>
+        </div>
+    </body>
+</html>
